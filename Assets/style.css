@@ -1,3 +1,4 @@
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +16,7 @@
             height: 500px; /* Hauteur ajustée */
             margin: auto;
             overflow: hidden;
+            box-sizing: border-box; /* Évite les débordements */
         }
 
         /* ✅ Centrer et ajuster les images */
@@ -25,9 +27,9 @@
         }
 
         .swiper-slide img {
-            width: 80%; /* Réduction de la taille */
+            width: 70%; /* Réduction de la taille */
             height: auto;
-            max-height: 400px; /* Hauteur max */
+            max-height: 90%; /* Hauteur max ajustée */
             object-fit: contain; /* Ajustement pour éviter la déformation */
         }
     </style>
