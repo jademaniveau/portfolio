@@ -1,11 +1,36 @@
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider Swiper.js</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        /* ✅ Réduction de la taille du slider */
+        .swiper-container {
+            width: 100%;
+            max-width: 800px; /* Réduction de la largeur max */
+            height: 500px; /* Hauteur ajustée */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* ✅ Centrer et ajuster les images */
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-slide img {
+            width: 80%; /* Réduction de la taille */
+            height: auto;
+            max-height: 400px; /* Hauteur max */
+            object-fit: contain; /* Ajustement pour éviter la déformation */
+        }
+    </style>
 </head>
 <body>
 
@@ -21,12 +46,33 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
 
-        <!-- Pagination (petits points en bas) -->
+        <!-- Pagination -->
         <div class="swiper-pagination"></div>
     </div>
 
+    <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
